@@ -50,3 +50,13 @@ Virtual Host
 ------------
 Afterwards, set up a virtual host to point to the public/ directory of the
 project and you should be ready to go!
+
+Using Doctrine ORM
+------------------
+The first step is configure database connectivity:
+
+```
+cp config/autoload/database.local.php.dist config/autoload/database.local.php
+```
+
+Edit the file `database.local.php` with the necessary settings.
