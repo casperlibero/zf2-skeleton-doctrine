@@ -13,8 +13,6 @@ Edit the file `database.local.php` with your settings.
 Entities
 --------
 
-[Doctrine ORM Getting Started](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/tutorials/getting-started.html)
-
 Example:
 
 ```php
@@ -81,3 +79,9 @@ Then run:
 ```
 php vendor/bin/doctrine-module migrations:migrate
 ```
+
+References
+----------
+
+[Doctrine ORM Getting Started](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/tutorials/getting-started.html)
+
