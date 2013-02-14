@@ -45,7 +45,17 @@ Create table from entity:
 php vendor/bin/doctrine-module orm:schema-tool:create
 ```
 
-After updating your entity class, generate and execute the update SQL:
+After updating your entity class, for example, adding new attributes:
+
+```php
+class Product
+{
+    /** @ORM\Column(type="string") **/
+    protected $description;
+}
+```
+
+generate and execute the update SQL:
 
 ```
 php vendor/bin/doctrine-module orm:schema-tool:update --dump-sql
@@ -54,7 +64,9 @@ php vendor/bin/doctrine-module orm:schema-tool:update --dump-sql
 Migrations
 ----------
 
-You can also generate database migrations for incremental database development:
+Sometimes you will need run more advanced changes on database than simple
+adding new attributes. You can generate database migrations for incremental
+database development:
 
 ```
 php vendor/bin/doctrine-module migrations:generate
