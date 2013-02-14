@@ -86,7 +86,7 @@ public function down(Schema $schema)
 }
 ```
 
-Then run:
+then run:
 
 ```
 php vendor/bin/doctrine-module migrations:migrate
