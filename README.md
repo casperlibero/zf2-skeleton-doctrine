@@ -1,19 +1,19 @@
 ZendSkeletonApplication + DoctrineORMModule
 ===========================================
 
-Configuration
--------------
+Configuração
+------------
 
 ```
 cp config/autoload/database.local.php.dist config/autoload/database.local.php
 ```
 
-Edit the file `database.local.php` with your settings.
+Configurar o arquivo `database.local.php`.
 
-Entities
---------
+Entidades
+---------
 
-Example:
+Exemplo:
 
 ```php
 namespace Application\Entity;
@@ -33,19 +33,19 @@ class Product
 }
 ```
 
-Check your entity class:
+Verifique se a classe da entidade está funcionando corretamente:
 
 ```
 php vendor/bin/doctrine-module orm:info
 ```
 
-Create table from entity:
+Criar a tabela no banco de dados a partir da classe da entidade:
 
 ```
 php vendor/bin/doctrine-module orm:schema-tool:create
 ```
 
-After updating your entity class, for example, adding new attributes:
+Sempre que atualizar sua classe de entidade, como por exemplo, a inclusão de um novo atributo:
 
 ```php
 class Product
@@ -55,24 +55,22 @@ class Product
 }
 ```
 
-generate and execute the update SQL:
+A tabela no banco de dados pode ser atualizada automaticamente:
 
 ```
-php vendor/bin/doctrine-module orm:schema-tool:update --dump-sql
+php vendor/bin/doctrine-module orm:schema-tool:update
 ```
 
 Migrations
 ----------
 
-Sometimes you will need run more advanced changes on database than simple
-adding new attributes. You can generate database migrations for incremental
-database development:
+É recomendado que as alterações de banco de dados sejam incrementais, através de migrations:
 
 ```
 php vendor/bin/doctrine-module migrations:generate
 ```
 
-Edit generated file:
+Edite o arquivo gerado:
 
 ```php
 public function up(Schema $schema)
@@ -86,14 +84,13 @@ public function down(Schema $schema)
 }
 ```
 
-then run:
+e execute-o:
 
 ```
 php vendor/bin/doctrine-module migrations:migrate
 ```
 
-References
-----------
+Referências
+-----------
 
 [Doctrine ORM Getting Started](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/tutorials/getting-started.html)
-
